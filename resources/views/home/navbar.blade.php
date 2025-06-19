@@ -123,6 +123,7 @@
       <div class="d-none d-sm-flex align-items-center gap-3">
         <a href="{{ url('/beranda') }}" class="nav-link navbar-link">Beranda</a>
         <a href="{{ url('/beranda#dataCards') }}" class="nav-link navbar-link">Catalog Data</a>
+        <a href="{{ url('/beranda#sumberdataCards') }}" class="nav-link navbar-link">Sumber Data</a>
       </div>
 
       <!-- Auth Buttons -->

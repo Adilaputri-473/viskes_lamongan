@@ -330,24 +330,45 @@
             <!-- Intro Section -->
             <div class="intro-section">
                 <div class="uiverse-container container">
-                    <a href="/kia">
-                        <div data-text="Imunisasi Dasar" style="--r:-15;" class="glass">
-                        <img src="/image/Imunisasi Dasar Lengkap.png" alt="Imunisasi Dasar Lengkap" style="width: 80%; height: auto; border-radius: 8px;">
-                        </div>
-                    </a>
+    @if(Auth::check())
+        <a href="/kia">
+            <div data-text="Imunisasi Dasar" style="--r:-15;" class="glass">
+                <img src="/image/Imunisasi Dasar Lengkap.png" alt="Imunisasi Dasar Lengkap" style="width: 80%; height: auto; border-radius: 8px;">
+            </div>
+        </a>
 
-                    <a href="/penyakit_menular">
-                        <div data-text="Pneumonia 2020" style="--r:5;" class="glass">
-                        <img src="/image/Pneumonia 2020.png" alt="Pneumonia 2020" style="width: 80%; height: auto; border-radius: 8px;">
-                        </div>
-                    </a>
+        <a href="/penyakit_menular">
+            <div data-text="Pneumonia 2020" style="--r:5;" class="glass">
+                <img src="/image/Pneumonia 2020.png" alt="Pneumonia 2020" style="width: 80%; height: auto; border-radius: 8px;">
+            </div>
+        </a>
 
-                    <a href="/status_gizi">
-                        <div data-text="Status Gizi" style="--r:25;" class="glass">
-                        <img src="/image/Status Gizi.png" alt="Status Gizi" style="width: 80%; height: auto; border-radius: 8px;">
-                        </div>
-                    </a>
-                </div>
+        <a href="/status_gizi">
+            <div data-text="Status Gizi" style="--r:25;" class="glass">
+                <img src="/image/Status Gizi.png" alt="Status Gizi" style="width: 80%; height: auto; border-radius: 8px;">
+            </div>
+        </a>
+    @else
+        <a href="/restriction_data">
+            <div data-text="Imunisasi Dasar" style="--r:-15;" class="glass">
+                <img src="/image/Imunisasi Dasar Lengkap.png" alt="Imunisasi Dasar Lengkap" style="width: 80%; height: auto; border-radius: 8px;">
+            </div>
+        </a>
+
+        <a href="/restriction_data">
+            <div data-text="Pneumonia 2020" style="--r:5;" class="glass">
+                <img src="/image/Pneumonia 2020.png" alt="Pneumonia 2020" style="width: 80%; height: auto; border-radius: 8px;">
+            </div>
+        </a>
+
+        <a href="/restriction_data">
+            <div data-text="Status Gizi" style="--r:25;" class="glass">
+                <img src="/image/Status Gizi.png" alt="Status Gizi" style="width: 80%; height: auto; border-radius: 8px;">
+            </div>
+        </a>
+    @endif
+</div>
+
 
 
                 <div class="intro text-center mt-5">
@@ -358,13 +379,21 @@
                         dan pengambilan keputusan kapan saja, di mana saja.
                     </p>
 
-                    <button class="btn-glow" onclick="document.getElementById('dataCards').scrollIntoView({ behavior: 'smooth' });">
-                        <i class="fas fa-database me-2"></i> Jelajahi Data Sekarang
-                    </button>
+                    @if(Auth::check())
+                        <button class="btn-glow" onclick="document.getElementById('dataCards').scrollIntoView({ behavior: 'smooth' });">
+                            <i class="fas fa-database me-2"></i> Jelajahi Data Sekarang
+                        </button>
+                    @else
+                        <button class="btn-glow" onclick="window.location.href='/restriction_data'">
+                            <i class="fas fa-database me-2"></i> Jelajahi Data Sekarang
+                        </button>
+                    @endif
+
                 </div>
 
             </div>
 
+            @if(Auth::check())
             <!-- Visualisasi Data Section -->
             <div id="dataCards" class="visualisasi-section">
                 <!-- Tambahan untuk ornament-top-right -->
@@ -422,7 +451,7 @@
             </div>
 
             <!-- Sumber Data Section -->
-            <div class="sumberdata-section">
+            <div id="sumberdataCards" class="sumberdata-section">
                 <h3 class="text-center mb-5" style="color: white;">Sumber Data</h3>
 
                 
@@ -442,7 +471,7 @@
 
                 
             </div>
-
+            @endif
         </div>
 
         <!-- Footer -->

@@ -54,6 +54,10 @@ class HomeController extends Controller
     {
          return view('home.restriction_download');
     }
+    public function restriction_data()
+    {
+         return view('home.restriction_data');
+    }
 
     public function penyakit_menular()
     {

@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\TahunController;
+use App\Http\Controllers\TopikKesehatanController;
+use App\Http\Controllers\IndikatorTopikController;
 use App\Http\Controllers\PenyakitMenularController;
 use App\Http\Controllers\GiziController;
 use App\Http\Controllers\IbuAnakController;
@@ -36,6 +38,7 @@ Route::get('/kia', [HomeController::class, 'kia']);
 Route::get('/phbs', [HomeController::class, 'phbs']);
 Route::get('/restriction_file', [HomeController::class, 'restriction_file']);
 Route::get('/restriction_download', [HomeController::class, 'restriction_download']);
+Route::get('/restriction_data', [HomeController::class, 'restriction_data']);
 
 Route::get('lihat-pdf', function () {
     return redirect('https://link-ke-pdf.com/file.pdf');
@@ -95,6 +98,20 @@ Route::middleware(['auth', 'verified', 'is_admin'])->group(function ()
     Route::get('delete_tahun/{id}', [TahunController::class, 'delete_tahun']);
     Route::get('update_tahun/{id}', [TahunController::class, 'update_tahun']);
     Route::post('edit_tahun/{id}', [TahunController::class, 'edit_tahun']);
+
+    Route::get('add_topik_kesehatan', [TopikKesehatanController::class, 'add_topik_kesehatan']);
+    Route::post('upload_topik_kesehatan', [TopikKesehatanController::class, 'upload_topik_kesehatan']);
+    Route::get('view_topik_kesehatan', [TopikKesehatanController::class, 'view_topik_kesehatan']);
+    Route::get('delete_topik_kesehatan/{id}', [TopikKesehatanController::class, 'delete_topik_kesehatan']);
+    Route::get('update_topik_kesehatan/{id}', [TopikKesehatanController::class, 'update_topik_kesehatan']);
+    Route::post('edit_topik_kesehatan/{id}', [TopikKesehatanController::class, 'edit_topik_kesehatan']);
+    
+    Route::get('add_indikator_topik', [IndikatorTopikcontroller::class, 'add_indikator_topik']);
+    Route::post('upload_indikator_topik', [IndikatorTopikcontroller::class, 'upload_indikator_topik']);
+    Route::get('view_indikator_topik', [IndikatorTopikcontroller::class, 'view_indikator_topik']);
+    Route::get('delete_indikator_topik/{id}', [IndikatorTopikcontroller::class, 'delete_indikator_topik']);
+    Route::get('update_indikator_topik/{id}', [IndikatorTopikcontroller::class, 'update_indikator_topik']);
+    Route::post('edit_indikator_topik/{id}', [IndikatorTopikcontroller::class, 'edit_indikator_topik']);
     
     Route::get('add_penyakit_menular', [PenyakitMenularController::class, 'add_penyakit_menular']);
     Route::post('upload_penyakit_menular', [PenyakitMenularController::class, 'upload_penyakit_menular']); 

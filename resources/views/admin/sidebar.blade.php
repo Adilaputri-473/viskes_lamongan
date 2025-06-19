@@ -48,6 +48,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ url('view_topik_kesehatan') }}" class="nav-link {{ request()->is('view_topik_kesehatan') ? 'active' : '' }}"
+                                style="color: #262626;">
+                                <i class="nav-icon fas fa-map" style="font-size: 0.9rem;"></i>
+                                <p>Topik Kesehatan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ url('view_ibu_anak') }}" class="nav-link {{ request()->is('view_ibu_anak') ? 'active' : '' }}"
                                 style="color: #262626;">
                                 <i class="nav-icon fas fa-syringe" style="font-size: 0.9rem;"></i>
