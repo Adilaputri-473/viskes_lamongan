@@ -206,7 +206,7 @@
 
                         <div class="iframe-container mb-4 default-iframe">
                             <h3 class="text-center">Informasi dan Tren Pertahun</h3>
-                            <iframe src="http://localhost:3000/public/dashboard/c9184f88-2a4a-414e-9993-c7122e985c19" 
+                            <iframe src="http://localhost:3000/public/dashboard/e908bfd3-662d-47cb-abc1-b319c3077866" 
                                 width="100%" height="800px" frameborder="0" allowfullscreen>
                             </iframe>
                         </div>

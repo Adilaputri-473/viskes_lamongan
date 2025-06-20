@@ -101,6 +101,17 @@
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-md-6">
+    <div class="form-group">
+        <label for="kategori">Kategori</label>
+        <select name="kategori" class="form-control" required>
+            <option value="">-- Pilih Kategori --</option>
+            <option value="info">Info</option>
+            <option value="peta">Peta</option>
+        </select>
+    </div>
+</div>
+
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="link_visualisasi">Link Visualisasi</label>
                                             <input type="text" name="link_visualisasi" class="form-control" required>

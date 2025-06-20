@@ -35,6 +35,7 @@ class VisualisasiKesehatanIbuAnakController extends Controller
         $data = new VisualisasiKesehatanIbuAnak;
         $data-> link_visualisasi = $request-> link_visualisasi;
         $data-> tahun_id = $request->tahun_id; 
+        $data->kategori = $request->kategori;
         $data-> indikator_id = $request->indikator_id; 
         
         $data->save();
